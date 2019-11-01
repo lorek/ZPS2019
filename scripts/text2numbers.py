@@ -41,7 +41,7 @@ def read_data(path, classes_names):
 
 # main progam - tu sie zaczyna
 
-input_dir, output_dir = ParseArguments()
+input_dir, output_dir= ParseArguments()
 # print("input-dir = ", input_dir)
 # print("output-dir = ", output_dir)
 
@@ -62,6 +62,27 @@ for file in glob.glob(input_dir + "/train/**"):
 # read in train data
 X_train_data, Y_train = read_data(input_dir + "/train/", classes_names)
 
+
+#zapisywanie do pliku nazw klas
+
+classes_names_path = output_dir + '/classes_names.pkl'
+
+classes_names_outfile = open(classes_names_path, 'wb')
+
+pickle.dump(classes_names, classes_names_outfile)
+
+classes_names_outfile.close()
+
+
+#Sprawdzenie zawartosci pliku
+
+# test_data_infile = open(classes_names_path, 'rb')
+#
+# print(pickle.load(test_data_infile))
+#
+# test_data_infile.close()
+
+
 # BoW
 vectorizer = CountVectorizer()
 
@@ -78,7 +99,8 @@ Y_train = np.array(Y_train)
 bow_train_data = np.c_[np.transpose(Y_train), X_train]
 
 # zapisywanie do pliku - UWAGA: .pkl TO NIE JEST ROZSZERZENIE
-train_data_path = output_dir + '/train/train_data.pkl'
+
+train_data_path = output_dir + '/train_data.pkl'
 
 train_data_outfile = open(train_data_path, 'wb')
 
@@ -117,7 +139,7 @@ bow_test_data = np.c_[np.transpose(Y_test), X_test]
 
 # zapisywanie do pliku - UWAGA: .pkl TO NIE JEST ROZSZERZENIE
 
-test_data_path = output_dir + '/test/test_data.pkl'
+test_data_path = output_dir + '/test_data.pkl'
 
 test_data_outfile = open(test_data_path, 'wb')
 

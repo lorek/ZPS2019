@@ -6,13 +6,13 @@ Uruchomienie skryptu - TYLKO PRZEZ KONSOLE
 
 1. Nalezy wejsc do katalogu ZPS2019 w konsoli.
 
-2. Wpisac python3 (lub python) scripts/bag_of_words.py --input-dir datasets/sample_dataset/ --output-dir zbior_A/sample_dataset_bow_2123/
+2. Wpisac python3 (lub python) scripts/text2numbers.py --input-dir datasets/sample_dataset/ --output-dir zbior_A/sample_dataset_bow_2123/
 PS Oczywiscie zamiast tych sciezek mozna dac inne, zgodne z systemem operacyjnym, te tutaj byly wykonywane na MacOS.
 
-3. Pliki sa w formacie pickle omawianym na zajeciach, zaladowanie ich jest pokazane rowniez w bag_of_words.py lub pickle_demo.py
+3. Pliki sa w formacie pickle omawianym na zajeciach, zaladowanie ich jest pokazane rowniez w text2numbers.py lub pickle_demo.py
 
-4. Pliki zapisuja sie odpowiednio w folderach test i train
+4. Pliki zapisuja sie w folderze sample_dataset_bow_2123
 
-5. Wiekszosc instrukcji znajduje sie w komentarzach w pliku bag_of_words.py
+5. Wiekszosc instrukcji znajduje sie w komentarzach w pliku text2numbers.py
 
 🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
