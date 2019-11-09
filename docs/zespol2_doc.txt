@@ -1,0 +1,30 @@
+
+Instrukcja dotycząca korzystania z poniższych plików:
+
+pca.py
+kernel_pca.py
+nmf.py
+ica.py
+tsne.py
+lda.py
+
+Przykład uruchomienia skryptu w konsoli.
+Należy przejść do katalogu ZPS2019, a następnie wywołać poniższą komendę:
+python scripts/lda.py --input-dir zbior_A/sample_dataset_bow2123/ --output-dir zbiorA/sample_dataset_bow2123_LDA --n-components 3
+scripts/lda.py				- uruchamiany skrypt
+zbior_A/sample_dataset_bow2123/		- przykładowa ścieżka wejścia
+zbior_A/sample_dataset_bow2123_LDA	- przykładowa ścieżka wyjścia
+3					- wymiar, do którego chcemy zredukować 
+W razie problemów możliwe, że wymagane będzię uruchomienie sktyptu w Anaconda Prompt.
+
+Format danych:
+wejście: pickle
+wyjście: pickle
+
+Dane na wejściu i wyjściu w pierwszej kolumnie zawierają numery klas.
+
+Dodatkowe instrukcje znajdują się w komentarzach w pliku pca.py (pozostałe pliki działają analogicznie).
+
+Agata Rogowska
+Zuzanna Różak
+Aleksandra Siepiela
