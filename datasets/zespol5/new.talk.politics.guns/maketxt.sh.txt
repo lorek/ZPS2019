@@ -1,0 +1,9 @@
+#!/bin/sh
+
+mkdir ../new
+for name in *
+do
+	touch ../new/$name.txt
+	cat $name > ../new/$name.txt
+done
+	
