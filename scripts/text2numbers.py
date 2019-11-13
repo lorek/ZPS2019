@@ -27,9 +27,11 @@ def read_data(path, classes_names):
     for classs in classes_names:
         # search for all files in path
         for file_name in list((glob.glob(path + classs + "/**"))):
-            # print("klasa = ", classs, ", file = ",file_name )
-            f = open(file_name, "r")
+            #print("klasa = ", classs, ", file = ",file_name )
+            #13.11.2019: Zmienilem "r" na "rb" i dodalem ponizsze dekodowanie/kodowanie
+            f = open(file_name, "rb")
             text = f.read()
+            text=text.decode('iso-8859-1').encode('utf8')
             X.append(text)
             Y.append(classes_dict[classs])
     return X, Y
