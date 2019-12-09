@@ -1,19 +1,13 @@
 
-Instrukcja dotycząca korzystania z poniższych plików:
-
-pca.py
-kernel_pca.py
-nmf.py
-ica.py
-tsne.py
-lda.py
+Instrukcja dotycząca korzystania z pliku dim_red.py
 
 Przykład uruchomienia skryptu w konsoli.
 Należy przejść do katalogu ZPS2019, a następnie wywołać poniższą komendę:
-python scripts/lda.py --input-dir zbior_A/sample_dataset_bow2123/ --output-dir zbiorA/sample_dataset_bow2123_LDA --n-components 3
-scripts/lda.py				- uruchamiany skrypt
+python scripts/dim_red.py --input-dir zbior_A/sample_dataset_bow2123/ --output-dir zbior_A/sample_dataset_bow2123_lda_3 --method lda --n-components 3 
+scripts/dim_red.py				- uruchamiany skrypt
 zbior_A/sample_dataset_bow2123/		- przykładowa ścieżka wejścia
 zbior_A/sample_dataset_bow2123_LDA	- przykładowa ścieżka wyjścia
+lda					- przykładowa metoda (możliwe metody: tsne, pca, kernelpca, ica, lda, nmf)
 3					- wymiar, do którego chcemy zredukować 
 W razie problemów możliwe, że wymagane będzię uruchomienie sktyptu w Anaconda Prompt.
 
@@ -23,7 +17,7 @@ wyjście: pickle
 
 Dane na wejściu i wyjściu w pierwszej kolumnie zawierają numery klas.
 
-Dodatkowe instrukcje znajdują się w komentarzach w pliku pca.py (pozostałe pliki działają analogicznie).
+Dodatkowe instrukcje znajdują się w komentarzach w pliku dim_red.py
 
 Agata Rogowska
 Zuzanna Różak
