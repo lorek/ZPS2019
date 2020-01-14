@@ -6,13 +6,17 @@ Uruchomienie skryptu - TYLKO PRZEZ KONSOLE
 
 1. Nalezy wejsc do katalogu ZPS2019 w konsoli.
 
-2. Wpisac python3 (lub python) scripts/text2numbers.py --input-dir datasets/sample_dataset/ --output-dir zbior_A/sample_dataset_bow_2123/
+2. Wpisac python3 (lub python) scripts/<nazwa skryptu> --input-dir datasets/sample_dataset/ --output-dir zbior_A/sample_dataset_bow_2123/
 PS Oczywiscie zamiast tych sciezek mozna dac inne, zgodne z systemem operacyjnym, te tutaj byly wykonywane na MacOS.
+PPS Nazwa skryptu to: text2numbers.py lub word2vec.py lub tfidf.py
 
 3. Pliki sa w formacie pickle omawianym na zajeciach, zaladowanie ich jest pokazane rowniez w text2numbers.py lub pickle_demo.py
 
 4. Pliki zapisuja sie w folderze sample_dataset_bow_2123
 
 5. Wiekszosc instrukcji znajduje sie w komentarzach w pliku text2numbers.py
+
+!!!!!UWAGA!!!!!
+Przed pierwszym uruchomieniem skryptu word2vec.py wejsc w kod i odkomentowac  13 i 14 linie
 
 🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
