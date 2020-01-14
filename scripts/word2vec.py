@@ -61,7 +61,7 @@ pickle.dump(classes_names, classes_names_outfile)
 classes_names_outfile.close()
 
 # trzeba sciagnac plik https://github.com/eyaler/word2vec-slim/blob/master/GoogleNews-vectors-negative300-SLIM.bin.gz
-# w naszym repo jest juz sciagniety
+# Zapisac ten plik w folderze scripts
 w2v = gensim.models.KeyedVectors.load_word2vec_format("scripts/GoogleNews-vectors-negative300-SLIM.bin.gz", binary=True)
 
 nr_posts_train = len(X_train_data)

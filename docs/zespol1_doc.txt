@@ -16,7 +16,11 @@ PPS Nazwa skryptu to: text2numbers.py lub word2vec.py lub tfidf.py
 
 5. Wiekszosc instrukcji znajduje sie w komentarzach w pliku text2numbers.py
 
-!!!!!UWAGA!!!!!
+‼UWAGA 1‼
 Przed pierwszym uruchomieniem skryptu word2vec.py wejsc w kod i odkomentowac  13 i 14 linie
+
+‼UWAGA 2‼
+Przed uruchomieniem word2vec nalezy pobrac plik z https://github.com/eyaler/word2vec-slim/blob/master/GoogleNews-vectors-negative300-SLIM.bin.gz
+i umiescic go w folderze scripts!!! Nie commitowac! Ten plik jest za duzy!
 
 🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
