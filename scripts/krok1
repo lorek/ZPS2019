@@ -1,0 +1,16 @@
+#!/bin/bash
+echo "what is the text to point converting method?"
+read ttp
+for grup in artykuly_bbc datasets_zespol2 datasets_zespol4_v1 datasets_zespol4_v2 sample_dataset zespol5 ; do 
+	python "$ttp"".py" --input-dir ~/Dokumenty/repos/ZPS2019/datasets/"$grup"
+	for red in pca kernelpca ica tsne lda nmf ; do
+		for dim in 1 200; do
+			python ~/Dokumenty/repos/ZPS2019/scripts/dim_red.py --input-dir ~/Dokumenty/repos/ZPS2019/datasets/"$grup" --output-dir "$grup" --method "$red" --n-components "$dim"
+			for clas in SVM decisiontree gausian_bayes_classifier knn ; do
+				echo "$grup"";""$ttp"";""$red"":""$dim"";""$clas"";" >> ~/Dokumenty/dane.txt
+				python "$clas"".py" --input-dir ~/Dokumenty/repos/ZPS2019/datasets/"$grup" >> ~/Dokumenty/dane.txt
+			done
+		done
+	done
+done
+
