@@ -24,7 +24,7 @@ infile.close()
 
 
 X_train,Y_train = points_train[:,1:],points_train[:,0]
-X_test,Y_test = points_train[:,1:],points_train[:,0]
+X_test,Y_test = points_test[:,1:],points_test[:,0]
 clf = svm.SVC()
 clf.fit(X_train, Y_train)
 classes_predicted = clf.predict(X_test)
@@ -37,5 +37,4 @@ for cl_p, cl_v in zip(classes_predicted, Y_test):
 	nr = nr + 1
 
 rate2 = rate / len(classes_predicted)
-print("wszystkich = %d, dobrze = %d " % (len(classes_predicted), rate))
 print("classification rate = ", rate2)
