@@ -1,0 +1,7 @@
+#!/bin/bash
+for plik in sample_dataset_bow_2123 sample_dataset_bow_2123_ica_2 sample_dataset_bow_2123_ica_20 sample_dataset_bow_2123_ica_3 sample_dataset_bow_2123_kernelpca_2 sample_dataset_bow_2123_kernelpca_20 sample_dataset_bow_2123_kernelpca_3 sample_dataset_bow_2123_lda_100 sample_dataset_bow_2123_lda_200 sample_dataset_bow_2123_lda_3 sample_dataset_bow_2123_nmf_100 sample_dataset_bow_2123_nmf_200 sample_dataset_bow_2123_nmf_3 sample_dataset_bow_2123_pca_2 sample_dataset_bow_2123_pca_20 sample_dataset_bow_2123_pca_3 sample_dataset_bow_2123_tsne_2  sample_dataset_bow_2123_tsne_3 ; do
+	for clas in SVM decisiontree gaussian_bayes_classifier knn ; do
+		echo "$grup"";""$ttp"";""$red"":""$dim"";""$clas"";" >> ~/Dokumenty/dane.txt
+		python ~/Dokumenty/repos/ZPS2019/scripts/$clas.py --input-dir ~/Dokumenty/repos/ZPS2019/zbior_A/$plik"/" >> ~/Dokumenty/dane.txt
+	done
+done
