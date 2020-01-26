@@ -16,11 +16,11 @@ def ParseArguments():
 input_dir, output_dir = ParseArguments()
 
 
-train = open(input_dir + "train_data.pkl", "rb")
+train = open(input_dir + "/train_data.pkl", "rb")
 pointsTrain = pickle.load(train)
 train.close()
 
-test = open(input_dir + "test_data.pkl", "rb")
+test = open(input_dir + "/test_data.pkl", "rb")
 pointsTest = pickle.load(test)
 test.close()
 

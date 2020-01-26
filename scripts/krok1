@@ -1,0 +1,21 @@
+#!/bin/bash
+echo "what is the text to point converting method?"
+read ttp
+echo "start" > ~/Dokumenty/repos/ZPS2019/dane.txt
+for grup in artykuly_bbc datasets_zespol2 datasets_zespol4_v1 datasets_zespol4_v2 sample_dataset zespol5 ; do 
+	mkdir ~/Dokumenty/repos/ZPS2019/zbior$grup
+	python3 ~/Dokumenty/repos/ZPS2019/scripts/$ttp.py --input-dir ~/Dokumenty/repos/ZPS2019/datasets/$grup/ --output-dir ~/Dokumenty/repos/ZPS2019/zbior$grup/
+	for red in pca kernelpca ica tsne lda nmf ; do
+		mkdir ~/Dokumenty/repos/ZPS2019/zbior$grup/$red
+		for dim in 1 2 3 4 5 6 7 8 9 0 10 11 12 13 14 15 16 17 18 19 20 25 50 100 200; do
+			mkdir ~/Dokumenty/repos/ZPS2019/zbior$grup/$red/$dim
+			python3 ~/Dokumenty/repos/ZPS2019/scripts/dim_red.py --input-dir ~/Dokumenty/repos/ZPS2019/zbior$grup/ --output-dir ~/Dokumenty/repos/ZPS2019/zbior$grup/$red/$dim --method $red --n-components $dim
+			for clas in SVM decisiontree gaussian_bayes_classifier knn ; do
+				echo "$grup"";""$ttp"";""$red"":""$dim"";""$clas"";" >> ~/Dokumenty/repos/ZPS2019/dane.txt
+				python3 ~/Dokumenty/repos/ZPS2019/scripts/$clas.py --input-dir ~/Dokumenty/repos/ZPS2019/zbior$grup/$red/$dim >> ~/Dokumenty/repos/ZPS2019/dane.txt
+				sleep 4
+			done
+		done
+	done
+done
+
