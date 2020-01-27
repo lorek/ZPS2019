@@ -1,0 +1,7 @@
+#!/bin/bash
+ttp=word2vec
+for grup in artykuly_bbc datasets_zespol2 datasets_zespol4_v1 datasets_zespol4_v2 sample_dataset zespol5 ; do 
+	mkdir ~/Dokumenty/repos/ZPS2019/zbior$grup
+	python3 ~/Dokumenty/repos/ZPS2019/scripts/$ttp.py --input-dir ~/Dokumenty/repos/ZPS2019/datasets/$grup/ --output-dir ~/Dokumenty/repos/ZPS2019/zbior$grup/
+done
+
