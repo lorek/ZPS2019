@@ -1,0 +1,16 @@
+#!/bin/bash
+echo "what is the --input-dir"
+read inn
+echo "what is the --output-dir for the vector"
+read outt
+echo "what is the text to point converting method?"
+read ttp
+echo "what metod do you want to use for the reduction? Choose: pca, kernelpca, nmf, ica, tsne, lda"
+read red 
+echo "to how many dimenssions should be the points reduced?"
+read dim
+echo "which classifier do you want to use?"
+read class
+python "$ttp" --input-dir "$inn" --output-dir "$outt"
+python dim_red.py --input-dir "$outt" --output-dir "$outt" --method "$red" --n-components "$dim"
+python "$class" --input-dir "$outt" >> dane.txt
